@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.env.prod
+*.mp3
+downloaded_playlists/
+venv/
+*.log

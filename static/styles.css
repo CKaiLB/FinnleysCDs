@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87ceeb, #1e90ff);
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .content-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffd166;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  input {
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  button {
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Sun */
+  .sun {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ffd700, #ffa500);
+    border-radius: 50%;
+    box-shadow: 0 0 60px #ffd700, 0 0 100px #ffa500;
+    z-index: 1;
+    animation: pulse 4s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 60px #ffd700, 0 0 100px #ffa500;
+    }
+    100% {
+      box-shadow: 0 0 80px #ffd700, 0 0 120px #ffa500;
+    }
+  }
+  
+  /* Clouds */
+  .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+  }
+  
+  .cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cloud:before,
+  .cloud:after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+  }
+  
+  .cloud-1 {
+    top: 100px;
+    left: 20%;
+    width: 120px;
+    height: 40px;
+    animation: float-cloud 30s linear infinite;
+  }
+  
+  .cloud-1:before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 15px;
+  }
+  
+  .cloud-1:after {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    right: 15px;
+  }
+  
+  .cloud-2 {
+    top: 50px;
+    left: 50%;
+    width: 100px;
+    height: 35px;
+    animation: float-cloud 25s linear infinite 5s;
+  }
+  
+  .cloud-2:before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+  }
+  
+  .cloud-2:after {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    right: 10px;
+  }
+  
+  .cloud-3 {
+    top: 150px;
+    left: 70%;
+    width: 150px;
+    height: 45px;
+    animation: float-cloud 35s linear infinite 10s;
+  }
+  
+  .cloud-3:before {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 20px;
+  }
+  
+  .cloud-3:after {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 20px;
+  }
+  
+  @keyframes float-cloud {
+    0% {
+      transform: translateX(-150%);
+    }
+    100% {
+      transform: translateX(150vw);
+    }
+  }
+  
+  /* Ocean waves */
+  .ocean-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 100, 255, 0.5));
+    z-index: 0;
+  }
+  
+  .waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230099ff" fill-opacity="0.5" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    animation: wave 10s linear infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  
+  /* Island with Palm Tree */
+  .island {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    z-index: 2;
+    width: 200px;
+    height: 100px;
+  }
+  
+  .island-base {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 40px;
+    background: #f9e090;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .palm-tree {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    width: 40px;
+    height: 120px;
+    z-index: 3;
+  }
+  
+  .palm-trunk {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 10px;
+    height: 80px;
+    background: #8b4513;
+    border-radius: 2px;
+    transform-origin: bottom center;
+    animation: sway 8s ease-in-out infinite;
+  }
+  
+  .palm-leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 4;
+  }
+  
+  .palm-leaf {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #32cd32;
+    border-radius: 50% 50% 50% 0;
+    transform-origin: 0 50%;
+  }
+  
+  .leaf-1 {
+    transform: rotate(-20deg);
+    top: 5px;
+    left: 15px;
+  }
+  
+  .leaf-2 {
+    transform: rotate(30deg);
+    top: 0;
+    left: 15px;
+  }
+  
+  .leaf-3 {
+    transform: rotate(80deg);
+    top: 10px;
+    left: 15px;
+  }
+  
+  .leaf-4 {
+    transform: rotate(130deg);
+    top: 15px;
+    left: 15px;
+  }
+  
+  .leaf-5 {
+    transform: rotate(180deg);
+    top: 20px;
+    left: 15px;
+  }
+  
+  @keyframes sway {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  /* Plumeria flowers */
+  .plumeria {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23FFFFFF" d="M50,20 C60,35 70,35 80,30 C70,45 70,55 80,70 C60,65 40,65 20,70 C30,55 30,45 20,30 C30,35 40,35 50,20 Z"/><circle fill="%23FFD700" cx="50" cy="50" r="10"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 5;
+    opacity: 0.9;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .plumeria-1 {
+    top: 10%;
+    left: 10%;
+    transform: rotate(45deg);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .plumeria-2 {
+    top: 15%;
+    right: 15%;
+    transform: rotate(-30deg);
+    animation: float 7s ease-in-out infinite 1s;
+  }
+  
+  .plumeria-3 {
+    bottom: 20%;
+    left: 20%;
+    transform: rotate(15deg);
+    animation: float 5s ease-in-out infinite 0.5s;
+  }
+  
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--rotation, 0deg));
+    }
+    50% {
+      transform: translateY(-20px) rotate(var(--rotation, 0deg));
+    }
+  }
+  
+  /* Music notes */
+  .music-note-container {
+    position: relative;
+    height: 50px;
+    margin: 1rem 0;
+  }
+  
+  .music-note {
+    position: absolute;
+    font-size: 2rem;
+    color: #ffd166;
+    opacity: 0;
+    animation: float-note 3s ease-in-out infinite;
+  }
+  
+  .note-1 {
+    left: 30%;
+    animation-delay: 0s;
+  }
+  
+  .note-2 {
+    left: 50%;
+    animation-delay: 1s;
+  }
+  
+  .note-3 {
+    left: 70%;
+    animation-delay: 2s;
+  }
+  
+  @keyframes float-note {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .sun {
+      width: 80px;
+      height: 80px;
+      right: 40px;
+    }
+  
+    .plumeria {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .content-box {
+      padding: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .sun {
+      width: 60px;
+      height: 60px;
+      right: 20px;
+      top: 20px;
+    }
+  }
+  
