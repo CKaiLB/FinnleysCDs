@@ -46,7 +46,6 @@ app.config['JSON_AS_ASCII'] = False
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
 
 @app.route("/")
-@limiter.limit("5 per minute")
 def serve_index():
     return send_file('index.html')
 
